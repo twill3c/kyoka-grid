@@ -1,0 +1,20 @@
+:root {
+  color-scheme: dark;
+  --bg: #101418;
+  --fg: #e8edf2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui,
+    sans-serif;
+  min-height: 100dvh;
+}
