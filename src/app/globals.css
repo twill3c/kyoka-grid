@@ -1,7 +1,12 @@
 :root {
   color-scheme: dark;
   --bg: #101418;
+  --surface: #171c22;
+  --border: rgba(255, 255, 255, 0.1);
   --fg: #e8edf2;
+  --fg-secondary: #c3c2b7;
+  --fg-muted: #898781;
+  --accent: #3987e5;
 }
 
 * {
@@ -17,4 +22,83 @@ body {
   font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", system-ui,
     sans-serif;
   min-height: 100dvh;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.02em;
+}
+
+.subtitle {
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.board {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.control-row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  font: inherit;
+  color: var(--fg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  min-height: 44px; /* タッチターゲット(N-04) */
+}
+
+button:hover {
+  border-color: var(--fg-muted);
+}
+
+button.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.stats div {
+  display: grid;
+  gap: 2px;
+}
+
+.stats dt {
+  color: var(--fg-muted);
+  font-size: 0.75rem;
+}
+
+.stats dd {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
 }

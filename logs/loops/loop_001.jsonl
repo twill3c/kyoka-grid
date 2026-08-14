@@ -10,3 +10,5 @@
 {"v": "1.2", "ts": "2026-08-15T01:35:07+09:00", "project": "kyoka-grid", "loop_id": "loop_001", "event": "test_run", "data": {"command": "npx vitest run --coverage (verify)", "passed": 24, "failed": 0}}
 {"v": "1.2", "ts": "2026-08-15T01:35:07+09:00", "project": "kyoka-grid", "loop_id": "loop_001", "event": "stage_end", "data": {"stage": 5, "stage_name": "検証", "result": "pass"}}
 {"v": "1.2", "ts": "2026-08-15T01:36:02+09:00", "project": "kyoka-grid", "loop_id": "loop_001", "event": "stage_end", "data": {"stage": 6, "stage_name": "文書同期", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-15T01:36:17+09:00", "project": "kyoka-grid", "loop_id": "loop_001", "event": "commit", "data": {"sha": "fa380c3", "kind": "feat"}}
+{"v": "1.2", "ts": "2026-08-15T01:36:17+09:00", "project": "kyoka-grid", "loop_id": "loop_001", "event": "loop_end", "data": {"outcome": "success", "failure_count": 1, "summary": "RL コア完成: 環境・Q学習・価値反復オラクル・学習ゲート G-01〜G-04。テスト 24 件 green・カバレッジ閾値合格・verify PASS。失敗 1 件(VERIF-FALSE: ゲート期待値の較正、spec_fix)"}}

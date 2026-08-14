@@ -15,6 +15,8 @@ export interface LastUpdate {
   state: number;
   action: Action;
   tdError: number;
+  /** この行動が ε 探索(ランダム選択)だったか(F-05 のエージェント色変化用) */
+  explored: boolean;
 }
 
 export interface TrainerState {
@@ -69,7 +71,8 @@ export function trainerStep(
   const roll = rngNext(ts.rngState);
   let action: Action;
   let rngState: number;
-  if (roll.value < params.epsilon) {
+  const explored = roll.value < params.epsilon;
+  if (explored) {
     const ri = randInt(roll.state, 0, 3);
     action = ri.value as Action;
     rngState = ri.state;
@@ -91,7 +94,7 @@ export function trainerStep(
 
   const stepsInEpisode = ts.stepsInEpisode + 1;
   const episodeReturn = ts.episodeReturn + res.reward;
-  const lastUpdate: LastUpdate = { state: s, action, tdError };
+  const lastUpdate: LastUpdate = { state: s, action, tdError, explored };
 
   if (res.done || stepsInEpisode >= params.maxStepsPerEpisode) {
     return {
