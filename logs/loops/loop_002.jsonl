@@ -9,3 +9,5 @@
 {"v": "1.2", "ts": "2026-08-15T01:50:22+09:00", "project": "kyoka-grid", "loop_id": "loop_002", "event": "test_run", "data": {"command": "npm run verify (vitest --coverage)", "passed": 28, "failed": 0}}
 {"v": "1.2", "ts": "2026-08-15T01:50:22+09:00", "project": "kyoka-grid", "loop_id": "loop_002", "event": "stage_end", "data": {"stage": 5, "stage_name": "検証", "result": "pass"}}
 {"v": "1.2", "ts": "2026-08-15T01:50:22+09:00", "project": "kyoka-grid", "loop_id": "loop_002", "event": "stage_end", "data": {"stage": 6, "stage_name": "文書同期", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-15T01:50:47+09:00", "project": "kyoka-grid", "loop_id": "loop_002", "event": "commit", "data": {"sha": "069dc8a", "kind": "feat"}}
+{"v": "1.2", "ts": "2026-08-15T01:50:47+09:00", "project": "kyoka-grid", "loop_id": "loop_002", "event": "loop_end", "data": {"outcome": "success", "failure_count": 0, "summary": "可視化 UI 完成: 4 レイヤー描画(ヒートマップ/矢印/軌跡/エージェント)+ rAF 学習ループ + 最小実行制御。テスト 28 件 green・verify PASS・実機スクリーンショット確認済み"}}

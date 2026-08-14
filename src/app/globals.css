@@ -82,10 +82,104 @@ button.active {
   color: var(--accent);
 }
 
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 16px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  display: grid;
+  gap: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.params {
+  display: grid;
+  gap: 12px;
+}
+
+.param {
+  display: grid;
+  gap: 4px;
+}
+
+.param-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+}
+
+.param-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  min-height: 28px;
+}
+
+.oracle {
+  display: grid;
+  gap: 8px;
+}
+
+.agreement {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.agreement-label {
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+}
+
+.agreement-value {
+  font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.agreement-detail {
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.curve figcaption {
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+  margin-bottom: 6px;
+}
+
+.curve-latest {
+  color: var(--fg);
+  font-variant-numeric: tabular-nums;
+}
+
 .stats {
   display: flex;
   gap: 16px;
-  margin-left: auto;
 }
 
 .stats div {

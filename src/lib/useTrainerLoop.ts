@@ -2,6 +2,10 @@
 
 // 学習ループフック(F-06 / N-03)。描画は rAF、学習は 1 フレームあたり
 // batchSize(speed) ステップに制限して UI をブロックしない。
+//
+// 制約: map を切り替えるときは呼び出し側が key={map.id} で本フックを持つ
+// コンポーネントを remount すること。effect でのリセットでは旧マップ次元の
+// Q テーブルのまま新マップを 1 回描画してしまい範囲外アクセスになる(loop_003 の失敗記録)。
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Cell, GridMap } from "@/core/types";
@@ -84,12 +88,6 @@ export function useTrainerLoop(
     advance(1);
   }, [advance]);
   const reset = useCallback(() => {
-    setPlaying(false);
-    setState({ trainer: createTrainer(map, seed), trail: [] });
-  }, [map, seed]);
-
-  // マップ・シード変更時は学習状態をリセット(F-10)
-  useEffect(() => {
     setPlaying(false);
     setState({ trainer: createTrainer(map, seed), trail: [] });
   }, [map, seed]);

@@ -62,6 +62,28 @@ export function arrowOpacity(qRow: number[]): number {
   return 0.25 + 0.75 * Math.min(gap, 1);
 }
 
+/**
+ * 学習曲線の SVG points 文字列(T-074)。値域を [0, height] へ正規化(大きいほど上)。
+ * 空列は空文字、定数列・1 点は中央高さに置く。
+ */
+export function curvePoints(
+  xs: number[],
+  width: number,
+  height: number,
+): string {
+  if (xs.length === 0) return "";
+  const min = Math.min(...xs);
+  const max = Math.max(...xs);
+  const span = max - min;
+  const dx = xs.length > 1 ? width / (xs.length - 1) : 0;
+  return xs
+    .map((v, i) => {
+      const t = span === 0 ? 0.5 : (v - min) / span;
+      return `${i * dx},${(1 - t) * height}`;
+    })
+    .join(" ");
+}
+
 /** 軌跡リングバッファ(T-073)。直近 cap 点のみ保持 */
 export function pushTrail(
   trail: Cell[],
