@@ -196,3 +196,14 @@ input[type="range"] {
   font-variant-numeric: tabular-nums;
   font-size: 1.05rem;
 }
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  padding: 8px 0 16px;
+}
+
+.footer a {
+  color: inherit;
+}

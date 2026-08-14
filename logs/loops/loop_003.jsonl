@@ -9,3 +9,5 @@
 {"v": "1.2", "ts": "2026-08-15T05:33:01+09:00", "project": "kyoka-grid", "loop_id": "loop_003", "event": "test_run", "data": {"command": "npm run verify (vitest --coverage)", "passed": 30, "failed": 0}}
 {"v": "1.2", "ts": "2026-08-15T05:33:01+09:00", "project": "kyoka-grid", "loop_id": "loop_003", "event": "stage_end", "data": {"stage": 5, "stage_name": "検証", "result": "pass"}}
 {"v": "1.2", "ts": "2026-08-15T05:33:01+09:00", "project": "kyoka-grid", "loop_id": "loop_003", "event": "stage_end", "data": {"stage": 6, "stage_name": "文書同期", "result": "pass"}}
+{"v": "1.2", "ts": "2026-08-15T05:33:24+09:00", "project": "kyoka-grid", "loop_id": "loop_003", "event": "commit", "data": {"sha": "1856549", "kind": "feat"}}
+{"v": "1.2", "ts": "2026-08-15T05:33:24+09:00", "project": "kyoka-grid", "loop_id": "loop_003", "event": "loop_end", "data": {"outcome": "success", "failure_count": 1, "summary": "制御パネル・学習曲線・オラクル比較・マップ切替完成。テスト 30 件 green・verify PASS・実機確認済み。失敗 1 件(VERIF-GAP: マップ切替クラッシュ、keyed remount で修正)"}}

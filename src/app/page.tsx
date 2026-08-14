@@ -11,6 +11,7 @@ import { policyAgreement } from "@/core/qlearning";
 import type { Speed } from "@/core/schedule";
 import { SPEEDS } from "@/core/schedule";
 import { solve } from "@/core/valueIteration";
+import { FOOTER_LINKS } from "@/lib/links";
 import { useTrainerLoop } from "@/lib/useTrainerLoop";
 
 const SEED = 1;
@@ -54,6 +55,18 @@ export default function Home() {
         params={params}
         onParamsChange={setParams}
       />
+
+      <footer className="footer">
+        {FOOTER_LINKS.map((l, i) => (
+          <span key={l.href}>
+            {i > 0 && " ・ "}
+            <a href={l.href} target="_blank" rel="noreferrer">
+              {l.label}
+            </a>
+            {l.label === "MIT License" && " © 2026 坂田哲朗"}
+          </span>
+        ))}
+      </footer>
     </main>
   );
 }
